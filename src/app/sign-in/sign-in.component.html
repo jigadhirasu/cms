@@ -1,0 +1,76 @@
+<mat-stepper orientation="vertical" [linear]="true" #stepper>
+  <mat-step [stepControl]="signInOptionForm">
+    <form [formGroup]="signInOptionForm">
+      <ng-template matStepLabel>Choose Sign in Option</ng-template>
+      <div>
+        <button mat-button>
+          <mat-icon fontIcon="house"></mat-icon>
+        </button>
+      </div>
+      <mat-form-field>
+        <mat-label>Username</mat-label>
+        <input
+          matInput
+          placeholder="Username"
+          formControlName="username"
+          required
+        />
+        @if (signInOptionForm.get('username')?.hasError('required')) {
+        <mat-error>Email is <strong>required</strong></mat-error>
+        } 
+        @if (signInOptionForm.get('username')?.hasError('email')) {
+        <mat-error>Please enter a valid email address</mat-error>
+        }
+      </mat-form-field>
+      <div>
+        <button mat-button (click)="accountSignIn()">Next</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step [stepControl]="passwordForm">
+    <form [formGroup]="passwordForm">
+      <ng-template matStepLabel>Password</ng-template>
+      <mat-form-field>
+        <mat-label>Password</mat-label>
+        <input
+          matInput
+          formControlName="password"
+          placeholder="Password..."
+          required
+        />
+      </mat-form-field>
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+
+  <mat-step [stepControl]="fa2Form">
+    <form [formGroup]="fa2Form">
+      <ng-template matStepLabel>2 FA</ng-template>
+      <mat-form-field>
+        <mat-label>OTP Code</mat-label>
+        <input
+          matInput
+          formControlName="otpcode"
+          placeholder="000000"
+          required
+        />
+      </mat-form-field>
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+
+  <!-- <mat-step>
+    <ng-template matStepLabel>Done</ng-template>
+    <p>You are now done.</p>
+    <div>
+      <button mat-button matStepperPrevious>Back</button>
+      <button mat-button (click)="stepper.reset()">Reset</button>
+    </div>
+  </mat-step> -->
+</mat-stepper>
