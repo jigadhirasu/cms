@@ -1,0 +1,35 @@
+<div class="container layout">
+  <app-header [drawer]="drawer"></app-header>
+
+  <mat-drawer-container class="example-container" autosize>
+    <mat-drawer #drawer class="example-sidenav" mode="side">
+      <h5>Agent</h5>
+      <mat-nav-list role="list">
+        <mat-list-item role="listitem">Profile</mat-list-item>
+        <mat-list-item role="listitem">Emotion</mat-list-item>
+      </mat-nav-list>
+
+      <h5>Model</h5>
+      <mat-nav-list role="list">
+        <mat-list-item role="listitem">Chat</mat-list-item>
+        <mat-list-item role="listitem">Speech</mat-list-item>
+        <mat-list-item role="listitem">Embedding</mat-list-item>
+      </mat-nav-list>
+
+      <h5>Document</h5>
+      <mat-nav-list role="list">
+        <mat-list-item role="listitem">Document</mat-list-item>
+        <mat-list-item role="listitem">Embedding</mat-list-item>
+      </mat-nav-list>
+    </mat-drawer>
+
+    <div class="example-sidenav-content">
+      <!-- <router-outlet></router-outlet> -->
+      <mat-tab-group>
+        <mat-tab label="First"> Content 1 </mat-tab>
+        <mat-tab label="Second"> Content 2 </mat-tab>
+        <mat-tab label="Third"> Content 3 </mat-tab>
+      </mat-tab-group>
+    </div>
+  </mat-drawer-container>
+</div>

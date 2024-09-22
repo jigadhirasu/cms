@@ -5,7 +5,6 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatStepper, MatStepperModule } from '@angular/material/stepper';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
-import { RestfulService } from '../restful/restful.service';
 
 /**
  * @title Stepper vertical
@@ -27,7 +26,7 @@ import { RestfulService } from '../restful/restful.service';
 })
 export class SignInComponent {
 
-  constructor(private http: RestfulService) { }
+  constructor() { }
 
   stepper = viewChild.required('stepper', { read: MatStepper });
 
@@ -53,14 +52,6 @@ export class SignInComponent {
     if (!this.signInOptionForm.valid) {
       return;
     }
-
-
-    this.http.POST({
-      url: `/api/account/signin`,
-      contentType: `json`,
-    }, this.signInOptionForm.value).subscribe(resp => {
-      this.accountSignal.set(resp.data.accountToken);
-    });
 
 
     this.stepper().next();

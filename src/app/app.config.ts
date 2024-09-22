@@ -5,8 +5,8 @@ import { routes } from './app.routes';
 import { provideClientHydration } from '@angular/platform-browser';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { HTTP_INTERCEPTORS, provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
-import { AuthInterceptor } from './restful/auth.interceptor';
-import { ErrorInterceptor } from './restful/error.interceptor';
+import { AuthInterceptor } from './http-interceptors/auth.interceptor';
+import { ErrorInterceptor } from './http-interceptors/error.interceptor';
 
 export const appConfig: ApplicationConfig = {
   providers: [
