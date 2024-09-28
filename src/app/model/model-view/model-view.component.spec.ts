@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { EmbeddingComponent } from './embedding.component';
+import { ModelViewComponent } from './model-view.component';
 
-describe('EmbeddingComponent', () => {
-  let component: EmbeddingComponent;
-  let fixture: ComponentFixture<EmbeddingComponent>;
+describe('ModelViewComponent', () => {
+  let component: ModelViewComponent;
+  let fixture: ComponentFixture<ModelViewComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [EmbeddingComponent]
+      imports: [ModelViewComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(EmbeddingComponent);
+    fixture = TestBed.createComponent(ModelViewComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

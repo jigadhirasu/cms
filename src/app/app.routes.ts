@@ -4,13 +4,10 @@ import { AppComponent } from './app.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { LayoutComponent } from './layout/layout.component';
 import { AgentComponent } from './layout/agent/agent.component';
-import { ProfileComponent } from './layout/agent/profile/profile.component';
 import { DocumentComponent } from './layout/document/document.component';
-import { EmotionComponent } from './agent/emotion/emotion.component';
 import { ModelComponent } from './model/model.component';
-import { ChatComponent } from './model/chat/chat.component';
-import { SpeechComponent } from './model/speech/speech.component';
-import { EmbeddingComponent } from './model/embedding/embedding.component';
+import { ModelViewComponent } from './model/model-view/model-view.component';
+import { ModelEditComponent } from './model/model-edit/model-edit.component';
 
 export const routes: Routes = [
     {
@@ -26,22 +23,24 @@ export const routes: Routes = [
                 component: LayoutComponent,
                 children: [
                     {
-                        path: 'agent',
-                        component: AgentComponent,
-                        children: [
-                            { path: ':agent_id/profile', component: ProfileComponent },
-                            { path: ':agent_id/emotion', component: EmotionComponent },
-                        ]
-                    },
-                    {
                         path: 'model',
                         component: ModelComponent,
                         children: [
-                            { path: 'chat', component: ChatComponent },
-                            { path: 'speech', component: SpeechComponent },
-                            { path: 'embedding', component: EmbeddingComponent },
+                            {
+                                path: '',
+                                component: ModelViewComponent
+                            },
+                            {
+                                path: 'edit',
+                                component: ModelEditComponent
+                            }
                         ]
                     },
+                    {
+                        path: 'agent',
+                        component: AgentComponent,
+                    },
+
                 ]
             },
             {
