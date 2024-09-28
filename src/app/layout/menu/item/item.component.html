@@ -1,0 +1,18 @@
+<div class="pl-3">
+  <mat-list-item (click)="toggle()">
+    <span>{{ item().name }}</span>
+    @if( item().is_open ){
+    <mat-icon matListItemIcon>keyboard_arrow_down</mat-icon>
+    } @if( !item().is_open && item().children ) {
+    <mat-icon matListItemIcon>keyboard_arrow_right</mat-icon>
+    }
+  </mat-list-item>
+
+  @if( item().is_open) {
+  <mat-nav-list>
+    @for(item of item().children; track item.name ){
+    <app-item [item]="item"></app-item>
+    }
+  </mat-nav-list>
+  }
+</div>

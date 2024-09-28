@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ModelComponent } from './model.component';
+import { EmotionComponent } from './emotion.component';
 
-describe('ModelComponent', () => {
-  let component: ModelComponent;
-  let fixture: ComponentFixture<ModelComponent>;
+describe('EmotionComponent', () => {
+  let component: EmotionComponent;
+  let fixture: ComponentFixture<EmotionComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ModelComponent]
+      imports: [EmotionComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(ModelComponent);
+    fixture = TestBed.createComponent(EmotionComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

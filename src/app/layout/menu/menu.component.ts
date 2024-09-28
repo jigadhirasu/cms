@@ -1,35 +1,37 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
-import { MatTreeModule } from '@angular/material/tree';
-import { NAV_ITEMS, NavItem } from './menu.nav';
 import { Router } from '@angular/router';
-
-
+import { MatListModule } from '@angular/material/list';
+import { ItemComponent } from './item/item.component';
+import { itemComplete, MenuItem } from './item/menu-item';
+import { NAV_ITEMS } from '../../app.navs';
 
 
 @Component({
   selector: 'app-menu',
   standalone: true,
   imports: [
-    MatTreeModule,
+    MatListModule,
     MatButtonModule,
     MatIconModule,
+    ItemComponent,
   ],
   templateUrl: './menu.component.html',
   styleUrl: './menu.component.scss'
 })
 export class MenuComponent {
-  dataSource = NAV_ITEMS;
+  dataSource = signal<MenuItem[]>(NAV_ITEMS);
 
-  constructor(private router: Router) { }
+  constructor(private router: Router) {
 
-  childrenAccessor = (node: NavItem) => node.children ?? [];
-
-  hasChild = (_: number, node: NavItem) => !!node.children && node.children.length > 0;
+    this.dataSource().map((item) => {
+      itemComplete(item);
+    });
+  }
 
   routing = (path: string) => {
-    console.log(path);  
+    console.log(path);
     this.router.navigate([path]);
   }
 }
