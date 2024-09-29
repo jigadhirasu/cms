@@ -13,9 +13,11 @@ import { StaffComponent } from './pages/personal/staff/staff.component';
 import { PartnerComponent } from './pages/personal/partner/partner.component';
 import { EmbeddingComponent } from './pages/embedding/embedding.component';
 import { ProfileComponent } from './pages/profile/profile.component';
-import { EmotionComponent } from './pages/voice/emotion/emotion.component';
-import { TtsComponent } from './pages/voice/tts/tts.component';
-import { SttComponent } from './pages/voice/stt/stt.component';
+import { EmotionComponent } from './pages/voice/pages/emotion/emotion.component';
+import { TtsComponent } from './pages/voice/pages/tts/tts.component';
+import { SttComponent } from './pages/voice/pages/stt/stt.component';
+import { VoiceGroupComponent } from './pages/voice/components/group/group.component';
+import { VoiceListComponent } from './pages/voice/components/list/list.component';
 
 export const routes: Routes = [
     {
@@ -101,10 +103,29 @@ export const routes: Routes = [
                             {
                                 path: 'tts',
                                 component: TtsComponent,
+                                children: [
+                                    {
+                                        path: 'group',
+                                        component: VoiceGroupComponent,
+                                    },
+                                    {
+                                        path: 'list',
+                                        component: VoiceListComponent,
+                                    },
+                                ]
                             },
                             {
                                 path: 'stt',
                                 component: SttComponent,
+                                children: [
+                                    {
+                                        path: 'group',
+                                        component: VoiceGroupComponent,
+                                    }, {
+                                        path: 'list',
+                                        component: VoiceListComponent,
+                                    },
+                                ]
                             }
                         ]
                     }

@@ -1,0 +1,18 @@
+.table-container {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 48px;
+
+  .table-box {
+    flex: 1 1 auto;
+    padding: 10px;
+    display: flex;
+  }
+
+  .paginator-box {
+    flex: 0 0 auto;
+  }
+}
