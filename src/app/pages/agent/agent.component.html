@@ -1,7 +1,10 @@
 <div class="container">
-  <mat-toolbar class="flex justify-end">
-    <button mat-raised-button>Create</button>
-  </mat-toolbar>
+  <div class="flex items-center">
+    <app-search class="flex-auto"></app-search>
+    <a class="pl-2 pb-5" [routerLink]="['/agent/create']">
+      <button mat-raised-button>Create</button>
+    </a>
+  </div>
 
   <table mat-table [dataSource]="dataSource()" class="mat-elevation-z8">
     <ng-container matColumnDef="id">

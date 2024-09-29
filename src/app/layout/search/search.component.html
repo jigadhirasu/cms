@@ -1,0 +1,29 @@
+<div class="flex items-center justify-center">
+  <mat-form-field class="flex-auto pl-4">
+    <mat-label>Search Bar</mat-label>
+    <mat-chip-grid
+      #chipGrid
+      aria-label="Enter keywords"
+      [formControl]="searchControl"
+    >
+      @for (searchOption of searchOptions(); track searchOption) {
+      <mat-chip-row (removed)="remove(searchOption)">
+        {{ searchOption.toString() }}
+        <button matChipRemove aria-label="'remove ' + keyword">
+          <mat-icon>cancel</mat-icon>
+        </button>
+      </mat-chip-row>
+      }
+    </mat-chip-grid>
+    <input
+      placeholder="New Search Option ex. name:openai"
+      [matChipInputFor]="chipGrid"
+      (matChipInputTokenEnd)="add($event)"
+      [formControl]="searchControl"
+    />
+    <button mat-flat-button matSuffix>
+      <mat-icon>search</mat-icon>
+      Search
+    </button>
+  </mat-form-field>
+</div>

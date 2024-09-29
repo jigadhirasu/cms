@@ -16,6 +16,7 @@ import { ProfileComponent } from './pages/profile/profile.component';
 import { EmotionComponent } from './pages/voice/emotion/emotion.component';
 import { TtsComponent } from './pages/voice/tts/tts.component';
 import { SttComponent } from './pages/voice/stt/stt.component';
+import { AgentCreateComponent } from './pages/agent/agent-create/agent-create.component';
 
 export const routes: Routes = [
     {
@@ -81,6 +82,10 @@ export const routes: Routes = [
                     {
                         path: 'agent',
                         component: AgentComponent,
+                    },
+                    {
+                        path: 'agent/create',
+                        component: AgentCreateComponent,
                     },
                     {
                         path: 'agent/profile',

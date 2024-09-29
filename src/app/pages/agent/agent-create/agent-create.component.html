@@ -1,0 +1,86 @@
+<h5>Create Agent</h5>
+
+<h6>Basic</h6>
+<mat-form-field>
+  <mat-label>Name</mat-label>
+  <input matInput />
+</mat-form-field>
+<mat-form-field>
+  <mat-label>Description</mat-label>
+  <textarea matInput></textarea>
+</mat-form-field>
+
+<h6>Profile</h6>
+<mat-form-field class="example-full-width">
+  <mat-label>Profile</mat-label>
+  <input
+    type="text"
+    placeholder="Pick one"
+    aria-label="Profile"
+    matInput
+    [formControl]="myControl"
+    [matAutocomplete]="auto"
+  />
+  <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+    @for (option of filteredOptions | async; track option) {
+    <mat-option [value]="option">{{ option }}</mat-option>
+    }
+  </mat-autocomplete>
+</mat-form-field>
+
+<h6>Voice</h6>
+<mat-form-field class="example-full-width">
+  <mat-label>TTS</mat-label>
+  <input
+    type="text"
+    placeholder="Pick one"
+    aria-label="Profile"
+    matInput
+    [formControl]="myControl"
+    [matAutocomplete]="auto"
+  />
+  <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+    @for (option of filteredOptions | async; track option) {
+    <mat-option [value]="option">{{ option }}</mat-option>
+    }
+  </mat-autocomplete>
+</mat-form-field>
+
+<mat-form-field class="example-full-width">
+  <mat-label>STT</mat-label>
+  <input
+    type="text"
+    placeholder="Pick one"
+    aria-label="Profile"
+    matInput
+    [formControl]="myControl"
+    [matAutocomplete]="auto"
+  />
+  <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+    @for (option of filteredOptions | async; track option) {
+    <mat-option [value]="option">{{ option }}</mat-option>
+    }
+  </mat-autocomplete>
+</mat-form-field>
+
+<mat-form-field class="example-full-width">
+  <mat-label>Emotion</mat-label>
+  <input
+    type="text"
+    placeholder="Pick one"
+    aria-label="Profile"
+    matInput
+    [formControl]="myControl"
+    [matAutocomplete]="auto"
+  />
+  <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+    @for (option of filteredOptions | async; track option) {
+    <mat-option [value]="option">{{ option }}</mat-option>
+    }
+  </mat-autocomplete>
+</mat-form-field>
+
+<div class="flex">
+  <span class="flex-auto"></span>
+  <button mat-flat-button class="w-40">Create</button>
+</div>

@@ -1,4 +1,4 @@
-import { Component, ComponentFactory, ComponentFactoryResolver, OnInit, signal, viewChild, ViewContainerRef } from '@angular/core';
+import { Component, signal, viewChild } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { MenuComponent } from "./menu/menu.component";
 import { HeaderComponent } from "./header/header.component";
