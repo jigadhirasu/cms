@@ -1,0 +1,15 @@
+<div class="w-full flex-col">
+  <div class="setting">
+    <mat-button-toggle-group
+      [value]="defaultToggle"
+      (change)="onToggleChange($event.value)"
+    >
+      <mat-button-toggle value="group">TTS Group</mat-button-toggle>
+      <mat-button-toggle value="list">TTS List</mat-button-toggle>
+    </mat-button-toggle-group>
+  </div>
+
+  <div class="w-full h-full">
+    <router-outlet></router-outlet>
+  </div>
+</div>
